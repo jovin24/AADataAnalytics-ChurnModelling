@@ -217,27 +217,27 @@ Explain the findings on visualizing the data
 
 #Sweet Viz 
 
-#!pip install sweetviz
+%pip install sweetviz
 
 # importing sweetviz
-#import sweetviz as sv
+import sweetviz as sv
 
 #analyzing the dataset
-#advert_report = sv.analyze(df1)
+advert_report = sv.analyze(df1)
 
 #display the report
-#advert_report.show_html('Churn_Modelling.html')
+advert_report.show_html('Churn_Modelling.html')
 
 #analyzing the dataset
-#myreport = sv.analyze(df1)
+myreport = sv.analyze(df1)
 #display the report
-#myreport.show_html('Churn_Modelling.html')
-#myreport.show_notebook()
+myreport.show_html('Churn_Modelling.html')
+myreport.show_notebook()
 
-#myreport = sv.compare(df1[100:200], df1[0:100])
-#myreport.show_notebook()
+myreport = sv.compare(df1[100:200], df1[0:100])
+myreport.show_notebook()
 
-#advert_report.show_notebook()
+advert_report.show_notebook()
 
 # Commented out IPython magic to ensure Python compatibility.
 # %matplotlib inline
