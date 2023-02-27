@@ -217,8 +217,6 @@ Explain the findings on visualizing the data
 
 #Sweet Viz 
 
-pip install sweetviz
-
 # importing sweetviz
 import sweetviz as sv
 
