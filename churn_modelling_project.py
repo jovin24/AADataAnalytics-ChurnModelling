@@ -24,7 +24,5 @@ len(df[(Z_score_CreditScore<-3) | (Z_score_CreditScore>3)])
 df1= df[(Z_score_CreditScore>-3) & (Z_score_CreditScore<3)].reset_index()
 df1
 
-pip install sklearn
-
 
 
