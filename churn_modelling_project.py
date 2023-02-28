@@ -13,25 +13,6 @@ df['Exited'] = df['Exited'].astype('category')
 
 df = df.drop('Balance', axis=1)
 
-df['CreditScore'].plot(kind='box')
-plt.show()
-
-#Age
-df['Age'].plot(kind='box')
-plt.show()
-
-#Tenure
-df['Tenure'].plot(kind='box')
-plt.show()
-
-#NumOfProducts
-df['NumOfProducts'].plot(kind='box')
-plt.show()
-
-#EstimatedSalary
-df['EstimatedSalary'].plot(kind='box')
-plt.show()
-
 #Calculate Z Score to treat Outliers
 import scipy.stats as stats
 
