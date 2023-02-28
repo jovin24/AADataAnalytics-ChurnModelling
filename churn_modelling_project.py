@@ -45,10 +45,3 @@ st.write('')
 st.write("The shape of Y_train is:", y_train.shape)
 st.write("The shape of Y_test is:", y_test.shape)
 
-from sklearn.linear_model import LogisticRegression
-lm = LogisticRegression()
-lm.fit(X_train, y_train)
-y_pred_LR = lm.predict(X_test)
-
-
-y_pred_LR
