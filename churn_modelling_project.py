@@ -37,5 +37,5 @@ Y = df1['Exited']
 X = df1.drop(['Exited', 'CustomerId' , 'EstimatedSalary', 'CreditScore'], axis=1)
 X_train, X_test, y_train, y_test = train_test_split(X,Y,train_size=0.8, random_state =0)
 
-
-st.write(df1)
+x_train
+X_test
