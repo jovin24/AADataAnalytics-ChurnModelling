@@ -33,3 +33,4 @@ df1
 
 
 from sklearn.preprocessing import StandardScaler
+print("The skewness for the original data is {}.".format(df1.CreditScore.skew()))
