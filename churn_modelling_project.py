@@ -34,78 +34,9 @@ import scipy.stats as s
 zscore_rate=s.zscore(df1['CreditScore'])
 
 
-print("The skewness for the original data is {}.".format(df1.CreditScore.skew()))
-print("The kurtosis for the original data is {}.".format(df1.CreditScore.kurt()))
-
-print('')
-
-print("The skewness for the Zscore Scaled column is {}.".format(df1.Z_Score_CreditScore.skew()))
-print("The kurtosis for the Zscore Scaled columns is {}.".format(df1.Z_Score_CreditScore.kurt()))
-
-
-fig, axes = plt.subplots(2, figsize=(15,8))
-
-sns.distplot(df1['CreditScore'], ax=axes[0])
-sns.distplot(df1['Z_Score_CreditScore'], ax=axes[1])
-
-
-plt.show()
-
-
 min_EstimatedSalary = df1.EstimatedSalary.min()
 max_EstimatedSalary = df1.EstimatedSalary.max()
 
-
-# Distribution of the columns
-
-# For CreditScore
-# EstimatedSalary
-fig, axes = plt.subplots(1,3, figsize=(15,5))
-
-sns.distplot(df1['EstimatedSalary'], ax=axes[0])
-sns.distplot(df1['Z_Score_CreditScore'], ax=axes[1])
-sns.distplot(df1['Min_Max_EstimatedSalary'], ax=axes[2])
-
-plt.tight_layout()
-plt.show()
-
-#Factorize the data
-for i in df1.columns:
-    if df1[i].dtypes=='object':
-        df1[i] = pd.Categorical(pd.factorize(df1[i])[0])
-
-data1 = df1['Age']
-data2 = df1['Geography']
-data3 = df1['Gender']
-data4 = df1['CreditScore']
-data5 = df1['Exited']
-
-
-a=data1.value_counts()
-plt.bar(data1.unique(),a)
-
-plt.xlabel("Age")
-plt.ylabel("Count")
-plt.title("Customer Age Bar Chart")
-plt.show()
-
-df1.groupby('Geography').size().plot(kind = 'pie', autopct = '%.0f%%', label = '');
-plt.legend(title='Geography', loc='best', labels=['France', 'Spain', 'Germany'] )
-age_groups = pd.cut(df1['Age'], bins=[18, 25, 35, 45, 55, 65, 75, 85])
-exit_counts = df1.groupby([age_groups, 'Exited'])['Exited'].count().unstack()
-exit_counts.plot(kind='bar', stacked=True)
-
-plt.xlabel('Age Group')
-plt.ylabel('Number of Customers')
-plt.title('Customer Churn by Age Group')
-plt.legend(title='Exited', loc='upper right', labels=['No', 'Yes'])
-age_labels = ['18-24', '25-34', '35-44', '45-54', '55-64', '65-74', '75-84']
-plt.xticks(range(len(age_labels)), age_labels)
-plt.show()
-
-sns.violinplot(data = df1, x = 'Gender', y = 'CreditScore');
-sns.histplot(data = df1, x = 'CreditScore', hue = 'Exited', bins = 15)
-plt.legend(['Exited', 'Not Exited'])
 
 """# **Data Splitting into train and test**"""
 
