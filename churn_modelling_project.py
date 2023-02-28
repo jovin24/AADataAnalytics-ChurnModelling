@@ -13,6 +13,7 @@ df['Exited'] = df['Exited'].astype('category')
 
 df = df.drop('Balance', axis=1)
 
+print(df)
 
 #Calculate Z Score to treat Outliers
 import scipy.stats as stats
