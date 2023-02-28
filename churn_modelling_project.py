@@ -26,7 +26,7 @@ import seaborn as sns
 
 """# **Step 2:Import the data inside google colab**"""
 
-df = pd.read_csv('https://github.com/jovin24/AADataAnalytics-ChurnModelling/blob/77ac7bb8a6c5e1a7e87d0e5e4e6e4c808225b440/Churn_Modelling.csv')
+df = pd.read_csv('Churn_Modelling.csv')
 
 """# **Step 4:Data Cleaning**
 
