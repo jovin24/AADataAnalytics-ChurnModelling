@@ -27,7 +27,7 @@ avg_CreditScore = df1['CreditScore'].mean()
 std_CreditScore = df1['CreditScore'].std()
 
 df1['Z_Score_CreditScore'] = (df1['CreditScore'] - avg_CreditScore)/std_CreditScore
-zscore_rate=s.zscore(df1['CreditScore'])
+zscore_rate=stats.zscore(df1['CreditScore'])
 
 
 df1
