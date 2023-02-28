@@ -56,19 +56,6 @@ min_EstimatedSalary = df1.EstimatedSalary.min()
 max_EstimatedSalary = df1.EstimatedSalary.max()
 
 
-
-
-print("The skewness for the original data is {}.".format(df1.EstimatedSalary.skew()))
-print("The skewness for the Zscore Scaled column is {}.".format(df1.Z_Score_CreditScore.skew()))
-print("The skewness for the Min Max Scaled Data is {}.".format(df1.Min_Max_EstimatedSalary.skew()))
-
-
-print('')
-
-print("The kurtosis for the original data is {}.".format(df1.EstimatedSalary.kurt()))
-print("The kurtosis for the Zscore Scaled columns is {}.".format(df1.Z_Score_CreditScore.kurt()))
-print("The kurtosis for the Min Max Scaled Data is {}.".format(df1.Min_Max_EstimatedSalary.kurt()))
-
 # Distribution of the columns
 
 # For CreditScore
