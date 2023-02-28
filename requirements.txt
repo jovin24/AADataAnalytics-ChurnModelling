@@ -6,3 +6,4 @@ seaborn
 sweetviz
 numpy
 matplotlib
+scikit-learn
