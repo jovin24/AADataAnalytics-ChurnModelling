@@ -36,5 +36,5 @@ from sklearn.model_selection import train_test_split
 Y = df1['Exited']
 X = df1.drop(['Exited', 'CustomerId' , 'EstimatedSalary', 'CreditScore'], axis=1)
 X_train, X_test, y_train, y_test = train_test_split(X,Y,train_size=0.8, random_state =0)
-st.write('The shape of X_train is:', X_train.shape)
+st.write(df)
 st.write("The shape of X_test is:", X_test.shape)
