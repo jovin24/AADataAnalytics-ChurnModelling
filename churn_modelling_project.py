@@ -49,3 +49,6 @@ from sklearn.linear_model import LogisticRegression
 lm = LogisticRegression()
 lm.fit(X_train, y_train)
 y_pred_LR = lm.predict(X_test)
+
+
+y_pred_LR
