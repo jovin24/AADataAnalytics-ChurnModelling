@@ -123,66 +123,32 @@ plt.ylabel("Count")
 plt.title("Customer Age Bar Chart")
 plt.show()
 
-
-
-df1.groupby('Geography').size()
-
 df1.groupby('Geography').size().plot(kind = 'pie', autopct = '%.0f%%', label = '');
 plt.legend(title='Geography', loc='best', labels=['France', 'Spain', 'Germany'] )
-
-# Create a new DataFrame that groups customers by age group and churn status
 age_groups = pd.cut(df1['Age'], bins=[18, 25, 35, 45, 55, 65, 75, 85])
 exit_counts = df1.groupby([age_groups, 'Exited'])['Exited'].count().unstack()
-
-# Plot the stacked bar chart
 exit_counts.plot(kind='bar', stacked=True)
 
-# Add chart labels and titles
 plt.xlabel('Age Group')
 plt.ylabel('Number of Customers')
 plt.title('Customer Churn by Age Group')
-
-# Add a legend to show the exit status
 plt.legend(title='Exited', loc='upper right', labels=['No', 'Yes'])
-
-# Add the age group labels to the x-axis
 age_labels = ['18-24', '25-34', '35-44', '45-54', '55-64', '65-74', '75-84']
 plt.xticks(range(len(age_labels)), age_labels)
-
-# Display the chart
 plt.show()
 
-data3.head()
-
 sns.violinplot(data = df1, x = 'Gender', y = 'CreditScore');
-
 sns.histplot(data = df1, x = 'CreditScore', hue = 'Exited', bins = 15)
 plt.legend(['Exited', 'Not Exited'])
 
-"""# **Step 6: Data Splitting into train and test**"""
+"""# **Data Splitting into train and test**"""
 
 from sklearn.model_selection import train_test_split
-
-## Splitting for X and Y variables:
 
 Y = df1['Exited']
 X = df1.drop(['Exited', 'CustomerId' , 'EstimatedSalary', 'CreditScore'], axis=1)
 
-# Independent Variable
-
-X.head()
-
-# Dependent or Target Variable
-
-Y.head()
-
-## Splitting dataset into 80% Training and 20% Testing Data:
-
 X_train, X_test, y_train, y_test = train_test_split(X,Y,train_size=0.8, random_state =0)
-
-# random_state ---> is seed -- fixing the sample selection for Training & Testing dataset
-
-# check the dimensions of the train & test subset for 
 
 print("The shape of X_train is:", X_train.shape)
 print("The shape of X_test is:", X_test.shape)
@@ -191,23 +157,14 @@ print('')
 print("The shape of Y_train is:", y_train.shape)
 print("The shape of Y_test is:", y_test.shape)
 
-"""# **Step 7: Model Building**
-
-
-"""
-
 #Logistic Regression Method
 from sklearn.linear_model import LogisticRegression
-
 lm = LogisticRegression()
 lm.fit(X_train, y_train)
-
-"""# **Step 8: Model Validation**"""
-
 y_pred_LR = lm.predict(X_test)
-y_pred_LR
 
-"""# **Step 9:Model Evaluation and Visualization**"""
+
+"""# **Model Evaluation and Visualization**"""
 
 #Logistic Regression
 
