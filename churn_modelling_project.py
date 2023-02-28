@@ -5,7 +5,7 @@ import seaborn as sns
 
 
 df = pd.read_csv('Churn_Modelling.csv', index_col = 'CustomerId')
-"""# **Model Evaluation and Visualization**"""
+"""# **Churn Modelling Dataset**"""
 
 df['HasCrCard'] = df['HasCrCard'].astype('category')
 df['IsActiveMember'] = df['IsActiveMember'].astype('category')
